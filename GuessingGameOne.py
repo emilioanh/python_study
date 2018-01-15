@@ -16,7 +16,7 @@ while True:
     while True:
         print(randNum)
         guess = input('Enter your number: ')
-        if guess.lower() in ['exit','Exit','EXIT']:
+        if guess in ['exit','Exit','EXIT']:
             isExit = True
             break
         elif int(guess) < randNum:

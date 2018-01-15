@@ -8,7 +8,7 @@ while True:
     except ValueError as e:
         print("Oops!  That was no valid number.  Try again...")
 
-f = open("ques.txt","w")
+f = open("C:/Users/anhnguyen/Desktop/ques.txt","w")
 c=a+b
 print("Hello Bitch the answer is %i"%c, file=f)
 print("Hello World", file=f)

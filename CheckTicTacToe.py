@@ -10,9 +10,9 @@ Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe 
 '''
 
 game = [
-    [2,2,2],
-    [1,1,2],
-    [1,2,1]]
+    [0,2,2],
+    [1,2,1],
+    [2,0,1]]
 row_set = ()
 
 def check_row(game, size):
@@ -27,21 +27,21 @@ def transpose_matrix(matrix):
     return trans_matrix
 
 def diagonal_match(game, size):
-	if game[0][0] != 0 :
+    if game[0][0] != 0 :
         match_count = 0
         for i in range(size-1):
             if game[i][i]==game[i+1][i+1]:
                 match_count += 1
         if match_count==size-1:
             return game[0][0]
-    elif game[0][size - 1] != 0:
+    if game[0][size - 1] != 0:
         match_count = 0
         for i in range(size-1):
             if game[i][size-1-i]==game[i+1][size-2-i]:
                 match_count += 1
         if match_count==size-1:
             return game[0][size - 1]             
-	return 0
+    return 0
 
 if check_row(game, 3) > 0:			
 	print (str(check_row(game, 3)) + str(" row wins!"))

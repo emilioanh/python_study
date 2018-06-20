@@ -19,7 +19,7 @@ def print_slash(size, row):
         print('| '+ row[i] +' ', end='')
     print('|')
 
-def draw_board(size, game):
+def draw_board(game, size):
     for index in range(size):
         print_dash(size)
         print_slash(size,game[index])

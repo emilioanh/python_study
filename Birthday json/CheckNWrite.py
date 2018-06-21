@@ -14,7 +14,6 @@ def add_entry(entry):
 
 if __name__ == "__main__":
     data = {}
-    month = []
     with open("scientist_birthdays.json", "r") as f:
         data = json.load(f)
     # list_entries()

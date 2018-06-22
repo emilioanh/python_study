@@ -40,13 +40,14 @@ def compare(u1, u2):
     else:
         return('Invalid input! You have not entered rock, paper or scissors, try again.')
 
-while True:
-    u1 = UserRPS()
-    u2 = UserRPS()
-    print(compare(u1,u2))
-    choice = input('Do you want to continue(y/n)? ')
-    if(choice in ['n','N'] or 'no' in choice.lower()):
-        break
+if __name__ == '__main__':
+    while True:
+        u1 = UserRPS()
+        u2 = UserRPS()
+        print(compare(u1,u2))
+        choice = input('Do you want to continue(y/n)? ')
+        if(choice in ['n','N'] or 'no' in choice.lower()):
+            break
 
 # print(compare(user1_answer, user2_answer))
 # def abc():

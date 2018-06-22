@@ -65,7 +65,7 @@ def check_tic_tac_toe(game, size):
             return 1
     return 0
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if check_row(game, 3) != 0:			
         print (str(check_row(game, 3)), str("row wins!"))
     transposed = transpose_matrix(game)

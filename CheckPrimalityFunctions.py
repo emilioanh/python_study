@@ -19,14 +19,16 @@ def isPrime(number):
 def get_number(prompt):
     '''Returns integer value for input. Prompt is displayed text'''
     return int(input(prompt))
-while True:
-    try:
-        if isPrime(get_number('Enter a number to check: ')):
-            print('Optimus Prime bitches!')
-        else:
-            print('Nope!')
-    except KeyboardInterrupt as interrupt:
-        print('thank you for using!')
-        break
-    except ValueError as e:
-        print('That is not a number please input again!')
+
+if __name__ == '__main__':
+    while True:
+        try:
+            if isPrime(get_number('Enter a number to check: ')):
+                print('Optimus Prime bitches!')
+            else:
+                print('Nope!')
+        except KeyboardInterrupt as interrupt:
+            print('thank you for using!')
+            break
+        except ValueError as e:
+            print('That is not a number please input again!')

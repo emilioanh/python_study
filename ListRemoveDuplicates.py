@@ -16,8 +16,9 @@ def deduplicate_v1(x):
 #this one uses sets
 def deduplicate_v2(x):
     return list(set(x))
-
-a = [1,2,3,4,3,2,1]
-print(a)
-print(deduplicate_v1(a))
-print(deduplicate_v2(a))
+    
+if __name__ == '__main__':
+  a = [1,2,3,4,3,2,1]
+  print(a)
+  print(deduplicate_v1(a))
+  print(deduplicate_v2(a))

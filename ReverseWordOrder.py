@@ -18,6 +18,7 @@ def raw_reverse(stringInput):
 def reversedString(stringInput):
     return ''.join(stringInput.split()[::-1])
 
-string = input('Enter a string for reversal:\n')
-print(raw_reverse(string))
-print(reversedString(string))
+if __name__ == '__main__':
+    string = input('Enter a string for reversal:\n')
+    print(raw_reverse(string))
+    print(reversedString(string))

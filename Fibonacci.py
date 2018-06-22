@@ -13,12 +13,13 @@ def Fibonnaci(numSeq):
         return 1
     else:
         return Fibonnaci(numSeq-1)+Fibonnaci(numSeq-2)
-
-while True:
-    try:
-        numSeq = int(input('Enter how many Fibonnacci you want to generate: '))
-        break
-    except ValueError as e:
-        print("Oops!  That was no valid number.  Try again...")
-for numOrd in range(1,numSeq+1):
-    print(Fibonnaci(numOrd), end=',')
+        
+if __name__ == '__main__':
+    while True:
+        try:
+            numSeq = int(input('Enter how many Fibonnacci you want to generate: '))
+            break
+        except ValueError as e:
+            print("Oops!  That was no valid number.  Try again...")
+    for numOrd in range(1,numSeq+1):
+        print(Fibonnaci(numOrd), end=',')

@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${workspaceRoot}/ML/flask test/.venv/Scripts/flask.exe",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "FLASK_APP": "${workspaceRoot}/ML/flask test/app.pyapp.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run",
+            ],
+            "envFile": "${workspaceFolder}/.venv",
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        },
+        {
             "name": "Python",
             "type": "python",
             "request": "launch",

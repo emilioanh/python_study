@@ -1,3 +1,4 @@
 *.pyc
 .vs/
-ML/flask test/.venv/
+.venv
+ML/data/

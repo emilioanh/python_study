@@ -194,4 +194,27 @@ def counting_hills_valleys():
 
 # print(f'{calculate_average_grade(student_marks, query_name):.2f}')
 
+def cloud_jumping():
+    n = int(input())
+    clouds = list(map(int, input().split()))
+    # c = input().split()
+    curr = 0
+    jumps = 0
+    while curr < n:
+        if curr<n-2 and clouds[curr+2] is 0:
+            curr += 2
+            jumps += 1
+        elif curr != n-1:
+            curr += 1
+            jumps += 1
+        else:
+            curr += 1
+    print(jumps)
+
+def repeated_string():
+    s, n = input(), int(input())
+    a_ocurrence = s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
+    print(a_ocurrence)
+
 if __name__ == '__main__':
+    repeated_string()

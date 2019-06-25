@@ -156,6 +156,42 @@ def validate_parse_mail(line=None):
     if line is None:
         pass
 
+'''
+Interview challenges
+'''
+def matching_socks():
+    n = int(input())
+    socks_pair = {}
+    pair = 0
+    socks = input().split()
+    for sock in socks:
+        if socks_pair.get(sock) is not None:
+            socks_pair.update({sock: socks_pair.get(sock) + 1})
+        else:
+            socks_pair.update({sock: 1})
+    for kind in socks_pair.keys():
+        pair += socks_pair.get(kind)//2
+    print(pair)
+
+# Complete the countingValleys function below.
+def counting_hills_valleys():
+    n = int(input())
+    s = input()
+    curr_spot = 0
+    valleys = 0
+    hills = 0
+    for step in s:
+        if step is 'U':
+            curr_spot += 1
+            if curr_spot == 0:
+                valleys += 1
+        elif step is 'D':
+            curr_spot -= 1
+            if curr_spot == 0:
+                hills += 1
+    print(valleys)
+    print(hills)
+
 # print(f'{calculate_average_grade(student_marks, query_name):.2f}')
+
 if __name__ == '__main__':
-    validate_parse_mail()

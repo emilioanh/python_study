@@ -2,6 +2,10 @@ from statistics import mean
 from collections import deque
 import re
 import email.utils
+import numpy as np
+
+from custom_lib.SortAgorithm import *
+from custom_lib.utilities import *
 
 DEQUE_METHODS = ["append"]
 
@@ -156,9 +160,7 @@ def validate_parse_mail(line=None):
     if line is None:
         pass
 
-'''
-Interview challenges
-'''
+#  region Interview challenges
 def matching_socks():
     n = int(input())
     socks_pair = {}
@@ -192,8 +194,6 @@ def counting_hills_valleys():
     print(valleys)
     print(hills)
 
-# print(f'{calculate_average_grade(student_marks, query_name):.2f}')
-
 def cloud_jumping():
     n = int(input())
     clouds = list(map(int, input().split()))
@@ -216,5 +216,40 @@ def repeated_string():
     a_ocurrence = s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
     print(a_ocurrence)
 
+def hourglass_sum():
+    arr = []
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+    max_sum_arr = []
+    for i in range(1, 5):
+        for j in range(1, 5):
+            max_sum_arr.append(arr[i-1][j-1] + arr[i-1][j] + arr[i-1][j+1] + arr[i][j] + arr[i+1][j-1] + arr[i+1][j] + arr[i+1][j+1])
+    print(max(max_sum_arr))
+
+def recursive_digit_sum():
+    # http://applet-magic.com/digitsummod9.htm
+    n, k = map(int, input().split())
+    x = n * k % 9
+    print(x if x else 9)
+
+def counting_inversion():
+    n = int(input())
+    result = []
+    for _ in range(n):
+        arr_len = int(input())
+        arr = list(map(int, input().rstrip().split()))
+        swaps, sorted_arr = MergeSort.mergeSort(arr)
+        result.append(swaps)
+    print(*result, sep ='\n')
+
+def left_rotation():
+    n, no_rotation = map(int, input().split())
+    arr = list(map(int, input().rstrip().split()))
+    print(*shift(arr, 'left', no_rotation))
+
+
+#endregion
+
+# print(f'{calculate_average_grade(student_marks, query_name):.2f}')
 if __name__ == '__main__':
-    repeated_string()
+    left_rotation()
